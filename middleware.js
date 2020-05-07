@@ -3,7 +3,6 @@ const jwt = require('jsonwebtoken');
 const { refreshTokens } = require('./auth');
 
 exports.protect = (req, res, next) => {
-  console.log('!!', req.user);
   if (!req.user) {
     return res.status(401).json({
       status: 'failure',
